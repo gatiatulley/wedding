@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Али & Лейсан — Никах</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --milk: #f8f4ee;
+      --ivory: #fffaf2;
+      --vanilla: #f3ead8;
+      --gold: #b89b6a;
+      --text: #5d4b3d;
+      --soft: #8b7765;
+      --white: rgba(255,255,255,0.75);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(to bottom, var(--ivory), var(--milk));
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "✧";
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 120px;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "❈";
+      position: absolute;
+      color: rgba(184,155,106,0.12);
+      font-size: 140px;
+    }
+
+    .hero::before {
+      top: 40px;
+      left: 40px;
+    }
+
+    .hero::after {
+      bottom: 40px;
+      right: 40px;
+    }
+
+    .arabic {
+      letter-spacing: 2px;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(54px, 8vw, 110px);
+      margin-bottom: 10px;
+    }
+
+    .date {
+      font-size: 28px;
+      margin: 20px 0;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--soft);
+      font-size: 18px;
+    }
+
+    .card {
+      background: var(--white);
+      border: 1px solid rgba(184,155,106,0.15);
+      border-radius: 28px;
+      padding: 40px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .timer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .timer-box {
+      padding: 25px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.8);
+    }
+
+    .timer-box span {
+      display: block;
+      font-size: 42px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .schedule {
+      display: grid;
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    .schedule-item h3 {
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+      border-radius: 24px;
+      margin-top: 30px;
+    }
+
+    .dress-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 30px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 80px 0;
+    }
+
+    .rsvp {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 16px 34px;
+      border-radius: 999px;
+      text-decoration: none;
+      color: white;
+      background: var(--gold);
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .rsvp:hover {
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 60px 0;
+      }
+
+      .card {
+        padding: 28px;
+      }
+
+      h2 {
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="container center">
+      <div class="arabic">Bismillahir-Rahmanir-Rahim</div>
+      <p>С огромной радостью приглашаем вас разделить с нами один из самых важных дней в нашей жизни</p>
+      <h1>Али & Лейсан</h1>
+      <div class="date">9 августа 2026 • 13:00</div>
+      <p class="subtitle">
+        Этот день станет началом нашей семьи, и нам будет особенно дорого,
+        если рядом будут близкие и любимые люди.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card center">
+        <h2>До нашего никаха осталось</h2>
+        <div class="timer" id="timer"></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2 class="center">Программа дня</h2>
+
+        <div class="schedule">
+
+          <div class="schedule-item">
+            <h3>14:00 — Никах</h3>
+            <p>Мечеть</p>
+          </div>
+
+          <div class="schedule-item">
+            <h3>15:00 — Welcome-зона и фуршет</h3>
+            <p>Банкетный зал</p>
+            <p>Лёгкий фуршет, напитки и свободное общение в welcome-зоне</p>
+          </div>
+
+          <div class="schedule-item">
+            <h3>15:30 — Начало банкета</h3>
+            <p>Банкетный зал</p>
+            <p>Праздничная программа и основной вечер</p>
+          </div>
+
+        </div>
+
+        <h2 class="center" style="margin-top: 50px;">Локации</h2>
+        <p class="center">
+          Для вашего удобства мы добавили карту,
+          чтобы вы легко смогли добраться до места проведения церемонии и банкета.
+        </p>
+
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f261cb09e038d5c6bee1c49ec5485177f3ad43a4e426fd3060439c6a79b5e41&amp;source=constructor"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="card">
+        <h2 class="center">Dress Code</h2>
+        <p class="center">
+          Мы будем рады видеть вас в нарядной одежде светлых, спокойных оттенков — это создаст особенно тёплую и гармоничную атмосферу нашего дня.
+        </p>
+
+        <div class="dress-grid">
+          <div style="grid-column: 1 / -1;">
+            <p>
+              Просим также учитывать, что церемония пройдет с уважением к исламским традициям, поэтому предпочтителен сдержанный и элегантный образ: одежда, прикрывающая плечи, руки и ноги, без слишком откровенных или вызывающих элементов.
+            </p>
+            <p style="margin-top:16px;">
+              Для девушек в мечети будут предоставлены платки, поэтому об этом можно не переживать.
+            </p>
+            <p style="margin-top:16px;">
+              В банкетном зале формат будет более свободным, но нам будет очень приятно, если общий стиль останется светлым, праздничным и эстетичным.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="footer">
+    <div class="container">
+      <h2>Мы будем счастливы видеть вас рядом</h2>
+      <p>Ваше присутствие станет для нас самым ценным подарком.</p>
+      <a href="https://forms.gle/oTQ5y8TuxpGSGxBG7" target="_blank" class="rsvp">Подтвердить присутствие</a>
+      <p style="margin-top: 30px;">
+        С любовью,<br>
+        Али & Лейсан
+      </p>
+    </div>
+  </section>
+
+  <script>
+    const weddingDate = new Date("2026-08-09T13:00:00").getTime();
+    const timer = document.getElementById("timer");
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      timer.innerHTML = `
+        <div class="timer-box"><span>${days}</span>дней</div>
+        <div class="timer-box"><span>${hours}</span>часов</div>
+        <div class="timer-box"><span>${minutes}</span>минут</div>
+        <div class="timer-box"><span>${seconds}</span>секунд</div>
+      `;
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
+
+</body>
+</html>

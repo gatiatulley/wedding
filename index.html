@@ -307,29 +307,63 @@
   </section>
 
   <script>
-    const weddingDate = new Date("2026-08-09T13:00:00").getTime();
-    const timer = document.getElementById("timer");
+  const weddingDate = new Date("2026-08-09T13:00:00").getTime();
+  const timer = document.getElementById("timer");
 
-    function updateTimer() {
-      const now = new Date().getTime();
-      const diff = weddingDate - now;
+  function getWordForm(number, one, few, many) {
+    number = Math.abs(number) % 100;
+    const lastDigit = number % 10;
 
-      const days = Math.floor(diff / (1000*60*60*24));
-      const hours = Math.floor((diff / (1000*60*60)) % 24);
-      const minutes = Math.floor((diff / (1000*60)) % 60);
-      const seconds = Math.floor((diff / 1000) % 60);
-
-      timer.innerHTML = `
-        <div class="timer-box"><span>${days}</span>дней</div>
-        <div class="timer-box"><span>${hours}</span>часов</div>
-        <div class="timer-box"><span>${minutes}</span>минут</div>
-        <div class="timer-box"><span>${seconds}</span>секунд</div>
-      `;
+    if (number > 10 && number < 20) {
+      return many;
     }
 
-    updateTimer();
-    setInterval(updateTimer, 1000);
-  </script>
+    if (lastDigit > 1 && lastDigit < 5) {
+      return few;
+    }
+
+    if (lastDigit === 1) {
+      return one;
+    }
+
+    return many;
+  }
+
+  function updateTimer() {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    timer.innerHTML = `
+      <div class="timer-box">
+        <span>${days}</span>
+        ${getWordForm(days, "день", "дня", "дней")}
+      </div>
+
+      <div class="timer-box">
+        <span>${hours}</span>
+        ${getWordForm(hours, "час", "часа", "часов")}
+      </div>
+
+      <div class="timer-box">
+        <span>${minutes}</span>
+        ${getWordForm(minutes, "минута", "минуты", "минут")}
+      </div>
+
+      <div class="timer-box">
+        <span>${seconds}</span>
+        ${getWordForm(seconds, "секунда", "секунды", "секунд")}
+      </div>
+    `;
+  }
+
+  updateTimer();
+  setInterval(updateTimer, 1000);
+</script>
 
 </body>
 </html>

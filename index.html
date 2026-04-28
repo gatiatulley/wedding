@@ -33,6 +33,16 @@
       line-height: 1.7;
     }
 
+    body::before {
+      content: "✧";
+      position: fixed;
+      top: 20px;
+      right: 30px;
+      font-size: 120px;
+      opacity: 0.05;
+      pointer-events: none;
+    }
+
     .container {
       width: min(1100px, 92%);
       margin: 0 auto;
@@ -52,10 +62,38 @@
       display: flex;
       align-items: center;
       text-align: center;
+      position: relative;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "❈";
+      position: absolute;
+      color: rgba(184,155,106,0.12);
+      font-size: 140px;
+    }
+
+    .hero::before {
+      top: 40px;
+      left: 40px;
+    }
+
+    .hero::after {
+      bottom: 40px;
+      right: 40px;
+    }
+
+    .arabic {
+      letter-spacing: 2px;
+      font-size: 15px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
     }
 
     h1 {
       font-size: clamp(54px, 8vw, 110px);
+      margin-bottom: 10px;
     }
 
     .date {
@@ -64,12 +102,20 @@
       font-family: 'Cormorant Garamond', serif;
     }
 
+    .subtitle {
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--soft);
+      font-size: 18px;
+    }
+
     .card {
       background: var(--white);
       border: 1px solid rgba(184,155,106,0.15);
       border-radius: 28px;
       padding: 40px;
       backdrop-filter: blur(10px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.03);
     }
 
     .center {
@@ -98,8 +144,8 @@
       display: block;
       font-size: 42px;
       font-family: 'Cormorant Garamond', serif;
-      color: var(--gold);
       font-weight: 700;
+      color: var(--gold);
     }
 
     .schedule {
@@ -109,8 +155,8 @@
     }
 
     .schedule-item h3 {
-      font-size: 30px;
-      margin-bottom: 6px;
+      font-size: 34px;
+      margin-bottom: 8px;
     }
 
     iframe {
@@ -121,7 +167,6 @@
       margin-top: 30px;
     }
 
-    /* DRESS CODE */
     .dress-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 26px;
@@ -156,122 +201,143 @@
       color: white;
       background: var(--gold);
     }
+
+    .intro {
+      max-width: 750px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <div class="container center">
-    <h1>Али & Лейсан</h1>
-    <div class="date">9 августа 2026 • 13:00</div>
-  </div>
-</section>
+  <section class="hero">
+    <div class="container center">
 
-<section>
-  <div class="container">
-    <div class="card center">
-      <h2>До никаха осталось</h2>
-      <div class="timer" id="timer"></div>
+      <div class="arabic">Bismillahir-Rahmanir-Rahim</div>
+
+      <p class="intro">
+        С огромной радостью приглашаем вас разделить с нами один из самых важных дней в нашей жизни
+      </p>
+
+      <h1>Али & Лейсан</h1>
+
+      <div class="date">9 августа 2026 • 13:00</div>
+
+      <p class="subtitle">
+        Этот день станет началом нашей семьи, и нам будет особенно дорого,
+        если рядом будут близкие и любимые люди.
+      </p>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="card">
-      <h2 class="center">Программа дня</h2>
+  <section>
+    <div class="container">
+      <div class="card center">
+        <h2>До никаха осталось</h2>
+        <div class="timer" id="timer"></div>
+      </div>
+    </div>
+  </section>
 
-      <div class="schedule">
+  <section>
+    <div class="container">
+      <div class="card">
 
-        <div class="schedule-item">
-          <h3>14:00 — Никах</h3>
-          <p>Мечеть</p>
+        <h2 class="center">Программа дня</h2>
+
+        <div class="schedule">
+
+          <div class="schedule-item">
+            <h3>14:00 — Никах</h3>
+            <p>Мечеть</p>
+          </div>
+
+          <div class="schedule-item">
+            <h3>15:00 — Welcome-зона и фуршет</h3>
+            <p>Банкетный зал</p>
+          </div>
+
+          <div class="schedule-item">
+            <h3>15:30 — Начало банкета</h3>
+            <p>Банкетный зал</p>
+          </div>
+
         </div>
 
-        <div class="schedule-item">
-          <h3>15:00 — Welcome-зона и фуршет</h3>
-          <p>Банкетный зал</p>
-        </div>
+        <h2 class="center" style="margin-top:50px;">Локации</h2>
 
-        <div class="schedule-item">
-          <h3>15:30 — Начало банкета</h3>
-          <p>Банкетный зал</p>
-        </div>
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f261cb09e038d5c6bee1c49ec5485177f3ad43a4e426fd3060439c6a79b5e41"></iframe>
 
       </div>
-
-      <h2 class="center" style="margin-top:50px;">Локации</h2>
-
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A1f261cb09e038d5c6bee1c49ec5485177f3ad43a4e426fd3060439c6a79b5e41"></iframe>
     </div>
-  </div>
-</section>
+  </section>
 
-<section>
-  <div class="container">
-    <div class="card">
+  <section>
+    <div class="container">
+      <div class="card">
 
-      <h2 class="center">Dress Code</h2>
+        <h2 class="center">Dress Code</h2>
 
-      <p class="dress-title">Общий стиль</p>
-      <p class="dress-text">
-        Мы будем рады видеть вас в нарядной одежде светлых, спокойных оттенков — это создаст особенно тёплую и гармоничную атмосферу нашего дня.
-      </p>
+        <p class="dress-title">Общий стиль</p>
+        <p class="dress-text">
+          Мы будем рады видеть вас в нарядной одежде светлых, спокойных оттенков — это создаст особенно тёплую и гармоничную атмосферу нашего дня.
+        </p>
 
-      <div class="dress-divider"></div>
+        <div class="dress-divider"></div>
 
-      <p class="dress-title">Дресс-код для церемонии</p>
-      <p class="dress-text">
-        Просим учитывать, что церемония пройдет с уважением к исламским традициям, поэтому предпочтителен сдержанный и элегантный образ: одежда, прикрывающая плечи, руки и ноги.
-      </p>
+        <p class="dress-title">Дресс-код для церемонии</p>
+        <p class="dress-text">
+          Просим учитывать, что церемония пройдет с уважением к исламским традициям, поэтому предпочтителен сдержанный и элегантный образ: одежда, прикрывающая плечи, руки и ноги.
+        </p>
 
-      <p class="dress-text">
-        Для девушек в мечети будут предоставлены платки.
-      </p>
+        <p class="dress-text">
+          Для девушек в мечети будут предоставлены платки.
+        </p>
 
-      <div class="dress-divider"></div>
+        <div class="dress-divider"></div>
 
-      <p class="dress-title">Банкет</p>
-      <p class="dress-text">
-        В банкетном зале формат будет более свободным, но нам будет очень приятно, если общий стиль останется светлым, праздничным и эстетичным.
-      </p>
+        <p class="dress-title">Банкет</p>
+        <p class="dress-text">
+          В банкетном зале формат будет более свободным, но нам будет очень приятно, если общий стиль останется светлым, праздничным и эстетичным.
+        </p>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="footer">
-  <div class="container center">
-    <h2>Мы будем рады видеть вас</h2>
-    <a class="rsvp" href="https://forms.gle/RaP2Dv68pZV2WmJJ8">Подтвердить присутствие</a>
-  </div>
-</section>
+  <section class="footer">
+    <div class="container center">
+      <h2>Мы будем рады видеть вас</h2>
+      <a class="rsvp" href="https://forms.gle/RaP2Dv68pZV2WmJJ8">Подтвердить присутствие</a>
+    </div>
+  </section>
 
-<script>
-  const weddingDate = new Date("2026-08-09T13:00:00").getTime();
-  const timer = document.getElementById("timer");
+  <script>
+    const weddingDate = new Date("2026-08-09T13:00:00").getTime();
+    const timer = document.getElementById("timer");
 
-  function updateTimer() {
-    const now = new Date().getTime();
-    const diff = weddingDate - now;
+    function updateTimer() {
+      const now = new Date().getTime();
+      const diff = weddingDate - now;
 
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const minutes = Math.floor((diff / (1000*60)) % 60);
-    const seconds = Math.floor((diff / 1000) % 60);
+      const days = Math.floor(diff / (1000*60*60*24));
+      const hours = Math.floor((diff / (1000*60*60)) % 24);
+      const minutes = Math.floor((diff / (1000*60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-    timer.innerHTML = `
-      <div class="timer-box"><span>${days}</span>дней</div>
-      <div class="timer-box"><span>${hours}</span>часов</div>
-      <div class="timer-box"><span>${minutes}</span>минут</div>
-      <div class="timer-box"><span>${seconds}</span>секунд</div>
-    `;
-  }
+      timer.innerHTML = `
+        <div class="timer-box"><span>${days}</span>дней</div>
+        <div class="timer-box"><span>${hours}</span>часов</div>
+        <div class="timer-box"><span>${minutes}</span>минут</div>
+        <div class="timer-box"><span>${seconds}</span>секунд</div>
+      `;
+    }
 
-  updateTimer();
-  setInterval(updateTimer, 1000);
-</script>
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  </script>
 
 </body>
 </html>
